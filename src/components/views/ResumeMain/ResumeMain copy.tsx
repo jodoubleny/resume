@@ -16,9 +16,7 @@ const ResumeMain = () => {
                             </div>
                             <div className="grid-content-years">2000-2077</div>
                         </div>
-                        <div className="grid-content-text">
-                            TESTTESTTEST
-                        </div>
+                        <div className="grid-content-text"> The Arasaka Brainworm was the first in a series of adventures that Atlas Games published under license for R. Talsorian Games&apos;s role-playing game Cyberpunk 2020. John Nephew, the founder of Atlas Games, would later recount that these adventures sold better than most d20 System books a decade later at the height of the d20 craze.</div>
                     </div>
                 </div>
             </div>
