@@ -1,0 +1,52 @@
+@import url(../../../static/vars.resume.css);
+
+.section-header {
+    margin: 5px 10px;
+    flex-grow: 1;
+}
+
+.section-container {
+    background-color: rgb(231, 228, 221);
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.section-container-no-bullet {
+    list-style: none;
+}
+
+.section-container-list::marker {
+    color: var(--point-color);
+}
+
+.section-contents-area {
+    margin-bottom: 1em;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contents-titles {
+    display:block;
+    flex-grow: 1;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.contents-period {
+    flex-grow: 0;
+
+    padding: 3px 17px;
+
+    background-color: var(--point-color);
+
+    border-radius: 2em;
+}
+
+.contents-content-text {
+    flex-grow: 2;
+}

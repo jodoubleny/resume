@@ -1,22 +1,49 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import './ResumeMain.css';
+// import layouts
+import GreetingLayout from "../../layouts/GreetingLayout/GreetingLayout";
+import SectionLayout from "../../layouts/SectionLayout/SectionLayout"
+// import statics
+import styles from './ResumeMain.module.css';
+import * as localEnglish from '../../locales/locale.english'; 
 
 const ResumeMain = () => {
     const render: JSX.Element = (
-        <div className="containter">
-            <div className="grid-wrapper">
-                <div className="grid-box grid-col-1">
-                    <div className="grid-section-header">Work Experience</div>
-                    <div className="grid-section-container">
-                        <div className="grid-content-header">
-                            <div className="grid-content grid-content-title">Front-end Designer</div>
-                            <div className="grid-content grid-content-title">Arasaka Inc.</div>
+        <div className={styles['container']}>
+            <div className={styles['section-wrapper']}>
+                {/* Left column starts */}
+                <div className={`${styles['column']} ${styles['column-left']}`}>
+                    <div className={`${styles['section']} ${styles['profile-area']}`}></div>
+                    <GreetingLayout></GreetingLayout>
+                    <SectionLayout data={localEnglish.skillsAndExpertise}></SectionLayout>
+                </div>
+                {/* Left column ends */}
+                {/* Right column starts */}
+                <div className={`${styles['column']} ${styles['column-right']}`}>
+                    <div className={`${styles['section']} ${styles['contact-info']}`}>
+                        <div>
+                            <h1>Contact</h1>
+                            <ul>
+                                <li></li>
+                            </ul>
                         </div>
-                        <div className="grid-content-years">2000-2077</div>
-                        <div className="grid-content grid-content-text"> The Arasaka Brainworm was the first in a series of adventures that Atlas Games published under license for R. Talsorian Games&apos;s role-playing game Cyberpunk 2020. John Nephew, the founder of Atlas Games, would later recount that these adventures sold better than most d20 System books a decade later at the height of the d20 craze.</div>
+                        <div>
+                            <h1>Mailing Address</h1>
+                            <ul>
+                                <li>Toronto, ON</li>
+                                <li>1A2 B3C</li>
+                                <li>Canada</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className={`${styles['section']}`}>
+                        <SectionLayout data={localEnglish.personalInfo}></SectionLayout>
+                    </div>
+                    <div className={`${styles['section']}`}>
+                        <SectionLayout data={localEnglish.workExperience}></SectionLayout>
                     </div>
                 </div>
+                {/* Right column ends */}
             </div>
         </div>
     )

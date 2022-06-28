@@ -1,0 +1,41 @@
+.container {
+    background-color: aqua;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.section-wrapper {
+    background-color: red;
+
+    margin: auto;
+    width: 900px;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.column {
+
+}
+
+.column-left {
+    background-color: brown;
+
+    width: 300px;
+}
+
+.column-right {
+    background-color: burlywood;
+
+    width: 600px;
+}
+
+.profile-area {
+}
+
+.contact-info {
+    background-color: green;
+
+    display: flex;
+}
