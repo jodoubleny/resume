@@ -1,16 +1,30 @@
 @font-face {
-    font-family: 'Cairo';
+    font-family: 'Anek Latin';
     font-style: normal;
-    font-weight: 200 1000;
+    font-stretch: 75% 125%;
+    font-weight: 100 800;
     src:
-        url('./Cairo-v20-latin.woff2')
+        url('./AnekLatin.woff2')
         format('woff2 supports variations'),
-        url('./Cairo-v20-latin.woff2')
+        url('./AnekLatin.woff2')
         format('woff2-variations'),
-        url('./Cairo-v20-latin.woff2')
+        url('./AnekLatin.woff2')
+        format('woff2');
+}
+
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 100 700;
+    src:
+        url('./MaterialSymbolsOutlined.woff2')
+        format('woff2 supports variations'),
+        url('./MaterialSymbolsOutlined.woff2')
+        format('woff2-variations'),
+        url('./MaterialSymbolsOutlined.woff2')
         format('woff2');
 }
 
 * {
-    font-family: 'Cairo', serif;
+    font-family: 'Anek Latin', serif;
 }

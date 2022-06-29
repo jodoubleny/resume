@@ -2,7 +2,7 @@
 @import url('../../../static/general.resume.css');
 
 body {
-    background-color: rgb(240, 240, 230);
+    background-color: rgb(255, 255, 255); /* for printing with background */
 }
 
 .container {
@@ -35,4 +35,12 @@ body {
 
 .contact-info {
     display: flex;
+}
+
+.listSection {
+    display: flex;
+}
+
+.simpleList {
+    flex-grow: 1;
 }

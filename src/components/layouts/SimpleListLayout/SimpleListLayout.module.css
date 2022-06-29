@@ -1,0 +1,32 @@
+@import url('../../../static/general.css');
+@import url('../../../static/general.resume.css');
+
+.simpleList-header {
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+.simpleList-ul {
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+}
+
+.simpleList-marker {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--new-black);
+    color: var(--new-white);
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Material Symbols Outlined';
+    margin-right: 0.6rem;
+    border: 3px var(--new-black) solid;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-variation-settings: 'FILL' 0, 'wght' 400;
+}
+
+.simpleList-li {
+    margin-bottom: 0.5rem;
+}

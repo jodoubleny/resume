@@ -2,9 +2,10 @@ import React from "react";
 // import layouts
 import GreetingLayout from "../../layouts/GreetingLayout/GreetingLayout";
 import SectionLayout from "../../layouts/SectionLayout/SectionLayout"
+import SimpleListLayout from "../../layouts/SimpleListLayout/SimpleListLayout";
 // import statics
 import styles from './ResumeMain.module.css';
-import * as localEnglish from '../../locales/locale.english'; 
+import * as localeEnglish from '../../locales/locale.english'; 
 
 const ResumeMain = () => {
     const render: JSX.Element = (
@@ -14,33 +15,25 @@ const ResumeMain = () => {
                 <div className={`${styles['column']} ${styles['column-left']}`}>
                     <div className={`${styles['section']} ${styles['profile-area']}`}></div>
                     <GreetingLayout></GreetingLayout>
-                    <SectionLayout data={localEnglish.skillsAndExpertise}></SectionLayout>
-                    <SectionLayout data={localEnglish.educationHistory}></SectionLayout>
+                    <SectionLayout data={localeEnglish.skillsAndExpertise}></SectionLayout>
+                    <SectionLayout data={localeEnglish.educationHistory}></SectionLayout>
                 </div>
                 {/* Left column ends */}
                 {/* Right column starts */}
                 <div className={`${styles['column']} ${styles['column-right']}`}>
-                    <div className={`${styles['section']} ${styles['contact-info']}`}>
-                        <div>
-                            <h1>Contact</h1>
-                            <ul>
-                                <li></li>
-                            </ul>
+                    <div className={styles['listSection']}>
+                        <div className={styles['simpleList']}>
+                            <SimpleListLayout data={localeEnglish.contact}></SimpleListLayout>
                         </div>
-                        <div>
-                            <h1>Mailing Address àá</h1>
-                            <ul>
-                                <li>Toronto, ON</li>
-                                <li>1A2 B3C</li>
-                                <li>Canada</li>
-                            </ul>
+                        <div className={styles['simpleList']}>
+                            <SimpleListLayout data={localeEnglish.webSites}></SimpleListLayout>
                         </div>
                     </div>
                     <div className={`${styles['section']}`}>
-                        <SectionLayout data={localEnglish.personalInfo}></SectionLayout>
+                        <SectionLayout data={localeEnglish.personalInfo}></SectionLayout>
                     </div>
                     <div className={`${styles['section']}`}>
-                        <SectionLayout data={localEnglish.workExperience}></SectionLayout>
+                        <SectionLayout data={localeEnglish.workExperience}></SectionLayout>
                     </div>
                 </div>
                 {/* Right column ends */}

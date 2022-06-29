@@ -1,4 +1,32 @@
 import { Section } from "../../models/Section";
+import { SimpleList } from "../../models/SimpleList";
+
+const contact: SimpleList = {
+    header: "Contact",
+    contentsList: [
+        {
+            marker: "call",
+            content: "(+1) 416-951-3856",
+            link: "call:+14169513856"
+        },
+        {
+            marker: "mail",
+            content: "jodoubleny@yahoo.com",
+            link: "mailto:jodoubleny@yahoo.com"
+        }
+    ]
+}
+
+const webSites: SimpleList = {
+    header: "Websites",
+    contentsList: [
+        {
+            marker: "code",
+            content: "github.com/jodoubleny",
+            link: `https://www.github.com/jodoubleny`
+        }
+    ]
+}
 
 const skillsAndExpertise: Section = {
     header: "Skills & Expertise",
@@ -20,13 +48,13 @@ const skillsAndExpertise: Section = {
 }
 
 const educationHistory: Section = {
-    header: "Education History",
+    header: "Education",
     isListType: true,
     contentsList: [
         {
-            title: "Advanced Diploma of Software Engineering Technology",
-            subtitle: "Centennial College, Toronto, ON, Canada",
-            period: "Jan 2020 - Jun 2022",
+            title: "Adv. Diploma of Software Engineering Technology",
+            subtitle: "Centennial College (Toronto)",
+            period: "2020 - 022",
             content: "GPA: 4.24"
         }
     ]
@@ -47,21 +75,23 @@ const workExperience: Section = {
     isListType: true,
     contentsList: [
         {
-            title: "Front-end Designer",
-            subtitle: "Arasaka Inc.",
-            period: "2020-2077",
-            content: "The Arasaka Brainworm was the first in a series of adventures that Atlas Games published under license for R. Talsorian Games&apos;s role-playing game Cyberpunk 2020. John Nephew, the founder of Atlas Games, would later recount that these adventures sold better than most d20 System books a decade later at the height of the d20 craze."
+            title: "Junior Digital Marketer",
+            subtitle: "Neogames (Seoul, Republic of Korea)",
+            period: "2015-2018",
+            content: "Planned and executed digital marketing strategies."
         },
         {
-            title: "Front-end Designer",
-            subtitle: "Arasaka Inc.",
-            period: "2020-2077",
-            content: "The Arasaka Brainworm was the first in a series of adventures that Atlas Games published under license for R. Talsorian Games&apos;s role-playing game Cyberpunk 2020. John Nephew, the founder of Atlas Games, would later recount that these adventures sold better than most d20 System books a decade later at the height of the d20 craze."
+            title: "Hall Manager",
+            subtitle: "Sejong (Sydney, Australia)",
+            period: "2018-2019",
+            content: "Gained a change to work in a diverse environment."
         }
     ]
 }
 
 export {
+    contact,
+    webSites,
     personalInfo,
     educationHistory,
     workExperience,

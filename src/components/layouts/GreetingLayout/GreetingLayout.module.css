@@ -3,6 +3,6 @@
 
 .greeting-container {
     font-size: 3rem;
-    font-variation-settings: 'wght' 900; 
+    font-variation-settings: 'wght' 800, 'wdth' 115; 
     line-height: 3rem;
 }

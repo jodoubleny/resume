@@ -1,13 +1,33 @@
 :root {
-    --point-color: rgb(220, 225, 80);
+    font-size: 17px;
+    --point-color: rgb(0, 0, 245);
+    --new-white: rgb(245, 245, 245);
+    --new-black: rgb(45, 45, 45);
+    --border-radius: 7px;
+    --light-background: rgb(238, 238, 238);
+}
+
+body {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-variation-settings: 'wght' 400;
+    color: var(--new-black)
+}
+
+a {
+    color: var(--new-black);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--point-color);
 }
 
 h1 {
     margin: 0;
-
     line-height: 1rem;
     font-size: 1.5rem;
-    font-variation-settings: 'wght' 800;
+    font-variation-settings: 'wght' 700, 'wdth' 110;
 }
 
 h2 {
@@ -25,10 +45,4 @@ h3 {
     font-size: 1rem;
     font-variation-settings: 'wght' 600;
     font-style: italic;
-}
-
-body {
-    line-height: 1.5rem;
-    font-size: 1rem;
-    font-variation-settings: 'wght' 400;
 }
