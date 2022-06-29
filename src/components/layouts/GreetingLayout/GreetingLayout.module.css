@@ -1,0 +1,8 @@
+@import url('../../../static/general.css');
+@import url('../../../static/general.resume.css');
+
+.greeting-container {
+    font-size: 3rem;
+    font-variation-settings: 'wght' 900; 
+    line-height: 3rem;
+}

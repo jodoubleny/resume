@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 200 1000;
+    src:
+        url('./Cairo-v20-latin.woff2')
+        format('woff2 supports variations'),
+        url('./Cairo-v20-latin.woff2')
+        format('woff2-variations'),
+        url('./Cairo-v20-latin.woff2')
+        format('woff2');
+}
+
+* {
+    font-family: 'Cairo', serif;
+}

@@ -19,6 +19,19 @@ const skillsAndExpertise: Section = {
     ]
 }
 
+const educationHistory: Section = {
+    header: "Education History",
+    isListType: true,
+    contentsList: [
+        {
+            title: "Advanced Diploma of Software Engineering Technology",
+            subtitle: "Centennial College, Toronto, ON, Canada",
+            period: "Jan 2020 - Jun 2022",
+            content: "GPA: 4.24"
+        }
+    ]
+}
+
 const personalInfo: Section = {
     header: "About me",
     isListType: false,
@@ -50,6 +63,7 @@ const workExperience: Section = {
 
 export {
     personalInfo,
+    educationHistory,
     workExperience,
     skillsAndExpertise
 }

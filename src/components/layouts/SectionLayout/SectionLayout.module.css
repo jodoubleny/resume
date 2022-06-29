@@ -1,14 +1,17 @@
-@import url(../../../static/vars.resume.css);
+@import url('../../../static/general.css');
+@import url('../../../static/general.resume.css');
 
 .section-header {
-    margin: 5px 10px;
+    margin: 20px 0;
     flex-grow: 1;
 }
 
 .section-container {
     background-color: rgb(231, 228, 221);
+    margin: 0;
     padding: 2em;
-    border-radius: 1em;
+    padding-bottom: 1.2rem;
+    border-radius: 1rem;
 }
 
 .section-container-no-bullet {
@@ -20,8 +23,6 @@
 }
 
 .section-contents-area {
-    margin-bottom: 1em;
-    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -30,23 +31,23 @@
 .contents-titles {
     display:block;
     flex-grow: 1;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
 }
 
 .contents-period {
     flex-grow: 0;
-
+    margin: 1em 0;
     padding: 3px 17px;
-
     background-color: var(--point-color);
-
-    border-radius: 2em;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-variation-settings: 'wght' 700;
 }
 
 .contents-content-text {
-    flex-grow: 2;
+    flex-grow: 1;
+    width: 100%;
+    margin-bottom: 0.8rem;
 }

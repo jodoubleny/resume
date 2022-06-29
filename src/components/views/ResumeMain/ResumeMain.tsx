@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 // import layouts
 import GreetingLayout from "../../layouts/GreetingLayout/GreetingLayout";
@@ -16,6 +15,7 @@ const ResumeMain = () => {
                     <div className={`${styles['section']} ${styles['profile-area']}`}></div>
                     <GreetingLayout></GreetingLayout>
                     <SectionLayout data={localEnglish.skillsAndExpertise}></SectionLayout>
+                    <SectionLayout data={localEnglish.educationHistory}></SectionLayout>
                 </div>
                 {/* Left column ends */}
                 {/* Right column starts */}
@@ -28,7 +28,7 @@ const ResumeMain = () => {
                             </ul>
                         </div>
                         <div>
-                            <h1>Mailing Address</h1>
+                            <h1>Mailing Address àá</h1>
                             <ul>
                                 <li>Toronto, ON</li>
                                 <li>1A2 B3C</li>

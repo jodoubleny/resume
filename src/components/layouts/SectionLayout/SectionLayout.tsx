@@ -10,7 +10,7 @@ const SectionLayout = (props: Props) => {
     const render: JSX.Element = (
         <Fragment>
             {/* Header starts */}
-            <h1 className={styles['section-header']}>{props.data.header}</h1>
+            <div className={styles['section-header']}><h1>{props.data.header}</h1></div>
             {/* Header ends */}
             <ul className={`${styles['section-container']} ${styles[`${props.data.isListType ? '' : 'section-container-no-bullet'}`]}`}>
             {props.data.contentsList.map((contents: SectionContents, i) => (
@@ -19,8 +19,8 @@ const SectionLayout = (props: Props) => {
                     <div className={styles['section-contents-area']}>
                         { ( contents.title || contents.subtitle ) &&
                             <ul className={styles['contents-titles']}>
-                                { contents.title && <li>{contents.title}</li> }
-                                { contents.subtitle && <li>{contents.subtitle}</li> }
+                                { contents.title && <li><h2>{contents.title}</h2></li> }
+                                { contents.subtitle && <li><h3>{contents.subtitle}</h3></li> }
                             </ul>
                         }
                         { contents.period && <div className={styles['contents-period']}>{contents.period}</div>}
