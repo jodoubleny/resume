@@ -2,22 +2,20 @@
 @import url('../../../static/general.resume.css');
 
 :root {
-    --page-width: 930px;
     --left-col-width: 300px;
     --col-gap: 30px;
     --right-col-width: 600px;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    padding: 30px;
 }
 
 .section-wrapper {
     background-color: aqua;
-    width: 100%;
-    max-width: var(--page-width);
-    margin: 30px auto;
+    min-width: 300px;
+    max-width: 930px;
+    margin: 0 auto;
     display: flex;
     flex-flow: column wrap;
 }
@@ -26,24 +24,35 @@
     content: "";
     width: var(--col-gap);
     height: 100%;
-    background-color: red;
     order: 1;
 }
 
 .column-left {
-    float: left;
     min-width: var(--left-col-width);
     max-width: var(--left-col-width);
 }
 
 .column-right {
-    float: right;
     background-color: aquamarine;
     min-width: var(--left-col-width);
     max-width: var(--right-col-width);
 }
 
-@media screen and (min-width: 630px) {
+@media screen and (max-width: 630px) {
+    .column-left {
+        max-width: 100%;
+    }
+
+    .column-right {
+        max-width: 100%;
+    }
+
+    .listSection {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 631px) {
     .column-left {
         order: 0;
     }
@@ -52,17 +61,6 @@
         order: 2;
     }
 }
-
-/* @media screen and (max-width: 690px) {
-    .column-left {
-        max-width: fit-content;
-    }
-
-    .column-right{
-        background-color: aliceblue;
-        max-width: fit-content;
-    }
-} */
 
 .profile-area {
     width: 100%;
@@ -78,12 +76,6 @@
 
 .listSection {
     display: flex;
-}
-
-@media  screen and (max-width: 990px) {
-    .listSection {
-        flex-direction: column;
-    }
 }
 
 .simpleList {

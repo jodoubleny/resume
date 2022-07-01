@@ -12,7 +12,7 @@ const ResumeMain = () => {
     const columnGap = useRef<HTMLDivElement>(null);
 
     const [sectionWrapperHeight, setSectionWrapperHeight] = useState('');
-    const [isHeightSet, setIsHeightSet] = useState(true);
+    const [isHeightSet, setIsHeightSet] = useState(false);
 
     useLayoutEffect(() => {
         const sectionWrapperTop = sectionWrapper.current?.getBoundingClientRect().top;
