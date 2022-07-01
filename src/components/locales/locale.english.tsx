@@ -33,16 +33,16 @@ const skillsAndExpertise: Section = {
     isListType: true,
     contentsList: [
         {
-            content: "UI/UX Design"
+            content: "ASP.net Backend with C#"
         },
         {
-            content: "HTML/CSS Coding"
+            content: "Micro services based on Spring Boot"
         },
         {
-            content: "Landing Page & App Design"
+            content: "MERN stack with Typescript"
         },
         {
-            content: "Full-stack designer"
+            content: "Electron.js with Typescript"
         }
     ]
 }
@@ -54,8 +54,14 @@ const educationHistory: Section = {
         {
             title: "Adv. Diploma of Software Engineering Technology",
             subtitle: "Centennial College (Toronto)",
-            period: "2020 - 022",
-            content: "GPA: 4.24"
+            period: "2020 - 2022",
+            content: "GPA: 4.308"
+        },
+        {
+            title: "Bachelor of Business",
+            subtitle: "Kwangwoon Univ. (Seoul)",
+            period: "2007 - 2014",
+            content: "GPA: 3.77"
         }
     ]
 }
