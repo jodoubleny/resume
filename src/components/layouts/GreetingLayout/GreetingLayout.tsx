@@ -5,7 +5,7 @@ const GreetingLayout = () => {
     const render: JSX.Element = (
         <Fragment>
             <div className={styles['greeting-container']}>
-                <span>Hello</span>, I&apos;m<br />
+                <span>Hi</span>, I&apos;m<br />
                 Jonny Park
             </div>
         </Fragment>

@@ -1,5 +1,5 @@
 :root {
-    font-size: 17px;
+    font-size: 18px;
     --point-color: rgb(0, 0, 245);
     --new-white: rgb(245, 245, 245);
     --new-black: rgb(45, 45, 45);
@@ -10,7 +10,7 @@
 body {
     line-height: 1.5rem;
     font-size: 1rem;
-    font-variation-settings: 'wght' 400;
+    font-variation-settings: 'wght' 500;
     color: var(--new-black)
 }
 

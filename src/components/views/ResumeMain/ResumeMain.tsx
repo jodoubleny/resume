@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { Fragment, useCallback, useLayoutEffect, useRef, useState } from "react";
 // import layouts
 import GreetingLayout from "../../layouts/GreetingLayout/GreetingLayout";
 import SectionLayout from "../../layouts/SectionLayout/SectionLayout"
@@ -7,82 +7,91 @@ import SimpleListLayout from "../../layouts/SimpleListLayout/SimpleListLayout";
 import styles from './ResumeMain.module.css';
 import * as localeEnglish from '../../locales/locale.english';
 
+const getWindowWidth = (): number => {
+    return window.innerWidth;
+}
+
 const ResumeMain = () => {
-    const sectionWrapper = useRef<HTMLDivElement>(null);
-    const columnGap = useRef<HTMLDivElement>(null);
+    const [viewportWidth, setViewportWidth] = useState(getWindowWidth());
 
-    const [sectionWrapperHeight, setSectionWrapperHeight] = useState('');
-    const [isHeightSet, setIsHeightSet] = useState(false);
-
+    /* when the window is resized, get the window width and set it to viewportWidth */
     useLayoutEffect(() => {
-        const sectionWrapperTop = sectionWrapper.current?.getBoundingClientRect().top;
-        const columnGapTop = columnGap.current?.getBoundingClientRect().top;
-        const sectionWrapperBottom = sectionWrapper.current?.getBoundingClientRect().bottom;
-        if (!isHeightSet
-                && typeof sectionWrapperTop != 'undefined'
-                && typeof columnGapTop != 'undefined'
-                && typeof sectionWrapperBottom != 'undefined') {
-            const leftColumnHeight = columnGapTop - sectionWrapperTop;
-            const rightColumnHeight = sectionWrapperBottom - columnGapTop;
-            if (leftColumnHeight >= rightColumnHeight) {
-                setSectionWrapperHeight(`${leftColumnHeight}px`);
-                setIsHeightSet(true);
-            } else {
-                setSectionWrapperHeight(`${rightColumnHeight}px`);
-                setIsHeightSet(true);
-            }
+        const handleWindowResize = (): void => {
+            setViewportWidth(getWindowWidth());
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
         }
-    });
+    }, []);
+
+    const handlePrintButton = () => {
+        window.print();
+    }
 
     const locale = localeEnglish;
-    const render: JSX.Element = (
+    const mobileLayoutStartWidth = 690;
+
+    const leftColumnItems: JSX.Element = (
+        <Fragment>
+            <div style={{order: "1"}} className={`${styles['grid-item']}`}>
+                <div><GreetingLayout></GreetingLayout></div>
+            </div>
+            <div style={{order: "2"}} className={`${styles['grid-item']} ${styles['listSection']}`}>
+                <div className={styles['simpleList']}>
+                    <SimpleListLayout data={locale.contact}></SimpleListLayout>
+                </div>
+                <div className={styles['simpleList']}>
+                    <SimpleListLayout data={locale.webSites}></SimpleListLayout>
+                </div>
+            </div>
+            <div style={{order: "3"}} className={`${styles['grid-item']}`}>
+                <SectionLayout data={locale.skillsAndExpertise}></SectionLayout>
+            </div>
+        </Fragment>
+    );
+
+    const rightColumnItems: JSX.Element = (
+        <Fragment>
+            <div className={styles['printableAlert']} onClick={handlePrintButton}>
+                <div className={styles['printableAlertIcon']}>print</div>
+                <div>
+                    <span>This is a print-friendly webpage résumé.</span>
+                    <br />
+                    <span>Just use the print menu of your web browser or </span>
+                    <span>touch/click this message.</span>
+                </div>
+            </div>
+            <div style={{order: "2"}} className={`${styles['grid-item']}`}>
+                <SectionLayout data={locale.personalInfo}></SectionLayout>
+            </div>
+            <div className={`${styles['grid-item']}`}>
+                <SectionLayout data={locale.workExperience}></SectionLayout>
+            </div>
+            <div className={`${styles['grid-item']}`}>
+                <SectionLayout data={locale.educationHistory}></SectionLayout>
+            </div>
+        </Fragment>
+    );
+
+    const resumeMainPage: JSX.Element = (
         <div className={styles['container']}>
-            <div ref={sectionWrapper} className={styles['section-wrapper']} style={{height: sectionWrapperHeight}}>
-                <div className={`${styles['column']} ${styles['column-left']}`}>
-                    <div><GreetingLayout></GreetingLayout></div>
+            <div className={styles['columns-wrapper']}>
+                <div className={`${styles['column']} ${styles['left-column']}`}>
+                    {leftColumnItems}
+                    {viewportWidth < mobileLayoutStartWidth && rightColumnItems}
                 </div>
-                <div className={`${styles['column-right']} ${styles['listSection']}`}>
-                    <div className={styles['simpleList']}>
-                        <SimpleListLayout data={localeEnglish.contact}></SimpleListLayout>
-                    </div>
-                    <div className={styles['simpleList']}>
-                        <SimpleListLayout data={localeEnglish.webSites}></SimpleListLayout>
-                    </div>
+                {viewportWidth >= mobileLayoutStartWidth && (
+                <div className={`${styles['column']} ${styles['right-column']}`}>
+                    {rightColumnItems}
                 </div>
-                <div className={`${styles['column-right']} ${styles['section']}`}>
-                        <SectionLayout data={localeEnglish.personalInfo}></SectionLayout>
-                </div>
-                <div className={`${styles['column']} ${styles['column-left']}`}>
-                    <SectionLayout data={localeEnglish.skillsAndExpertise}></SectionLayout>
-                </div>
-                <div ref={columnGap} className={styles['column-gap']}></div>
-                {/* <div className={`${styles['column']} ${styles['column-left']}`}>
-                    <div className={`${styles['section']} ${styles['profile-area']}`}></div>
-                    <GreetingLayout></GreetingLayout>
-                    <SectionLayout data={localeEnglish.skillsAndExpertise}></SectionLayout>
-                    <SectionLayout data={localeEnglish.educationHistory}></SectionLayout>
-                </div>
-                <div className={`${styles['column']} ${styles['column-right']}`}>
-                    <div className={styles['listSection']}>
-                        <div className={styles['simpleList']}>
-                            <SimpleListLayout data={localeEnglish.contact}></SimpleListLayout>
-                        </div>
-                        <div className={styles['simpleList']}>
-                            <SimpleListLayout data={localeEnglish.webSites}></SimpleListLayout>
-                        </div>
-                    </div>
-                    <div className={`${styles['section']}`}>
-                        <SectionLayout data={localeEnglish.personalInfo}></SectionLayout>
-                    </div>
-                    <div className={`${styles['section']}`}>
-                        <SectionLayout data={localeEnglish.workExperience}></SectionLayout>
-                    </div>
-                </div> */}
+                )}
             </div>
         </div>
     )
 
-    return render;
+    return resumeMainPage;
 }
 
 export default ResumeMain;

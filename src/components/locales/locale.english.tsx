@@ -13,17 +13,26 @@ const contact: SimpleList = {
             marker: "mail",
             content: "jodoubleny@yahoo.com",
             link: "mailto:jodoubleny@yahoo.com"
+        },
+        {
+            marker: "home",
+            content: "East York, ON"
         }
     ]
 }
 
 const webSites: SimpleList = {
-    header: "Websites",
+    header: "Links",
     contentsList: [
         {
             marker: "code",
             content: "github.com/jodoubleny",
             link: `https://www.github.com/jodoubleny`
+        },
+        {
+            marker: "description",
+            content: "linkedin.com/in/jonnypark/",
+            link: `https://www.linkedin.com/in/jonnypark/`
         }
     ]
 }
@@ -71,7 +80,7 @@ const personalInfo: Section = {
     isListType: false,
     contentsList: [
         {
-            content: "Lady Sylvanas Windrunner, formerly styled 'the Dark Lady' and 'the Banshee Queen', is the former Warchief of the Horde and former supreme ruler of the Forsaken, one of the most powerful factions of undead on Azeroth. In life, Sylvanas was the ranger-general of Silvermoon, whose leadership acumen and martial prowess were without equal. During the Third War, she bravely defended Quel'Thalas from a Scourge invasion led by the death knight Arthas Menethil. Ultimately, however, Sylvanas fell in battle. Rather than honor the ranger-general with a quick death, Arthas ripped out her soul and transformed it into a banshee: a cunning and vengeful agent of the Lich King empowered by hate."
+            content: "Good day! I'm a web developer from Seoul, currently based in Toronto, Canada. I'm interested in web technologies beyond the web. I believe opened web environment can make the world better."
         }
     ]
 }

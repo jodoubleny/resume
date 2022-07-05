@@ -25,6 +25,7 @@
     border-radius: var(--border-radius);
     text-align: center;
     font-variation-settings: 'FILL' 0, 'wght' 400;
+    user-select: none;
 }
 
 .simpleList-li {

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { SimpleList, ContentWithMarker } from "../../../models/SimpleList";
 import styles from "./SimpleListLayout.module.css";
 
@@ -6,9 +6,9 @@ interface Props {
     data: SimpleList;
 }
 
-const SimpleListLayout = (props: Props) => {
-    const pageRender: JSX.Element = (
-        <Fragment>
+const ResumeItem = (props: Props) => {
+    const item: JSX.Element = (
+        <div>
             {/* Header starts */}
             <div className={styles['simpleList-header']}>
                 <h1>{props.data.header}</h1>
@@ -26,10 +26,10 @@ const SimpleListLayout = (props: Props) => {
                 </li>
             ))}
             </ul>
-        </Fragment>
+        </div>
     )
 
-    return pageRender;
+    return item;
 }
 
-export default SimpleListLayout;
+export default ResumeItem;
