@@ -1,3 +1,5 @@
+import React from "react";
+import { ListWithPeriodModel } from "../../models/ListWithPeriodModel";
 import { Section } from "../../models/Section";
 import { SimpleList } from "../../models/SimpleList";
 
@@ -38,7 +40,7 @@ const webSites: SimpleList = {
 }
 
 const skillsAndExpertise: Section = {
-    header: "Skills & Expertise",
+    header: "Skills",
     isListType: true,
     contentsList: [
         {
@@ -56,24 +58,50 @@ const skillsAndExpertise: Section = {
     ]
 }
 
-const educationHistory: Section = {
+const educationLocale: ListWithPeriodModel = {
     header: "Education",
-    isListType: true,
     contentsList: [
         {
+            period: "2020-2022",
             title: "Adv. Diploma of Software Engineering Technology",
-            subtitle: "Centennial College (Toronto)",
-            period: "2020 - 2022",
-            content: "GPA: 4.308"
+            subtitle: "Centennial College (Toronto, Canada)",
+            textList: [
+                React.createElement('span', null, `GPA: 4.308`)
+            ]
         },
         {
+            period: "2007-2014",
             title: "Bachelor of Business",
-            subtitle: "Kwangwoon Univ. (Seoul)",
-            period: "2007 - 2014",
-            content: "GPA: 3.77"
+            subtitle: "Kwangwoon Univ. (Seoul, Korea)",
+            textList: [
+                React.createElement('span', null, `GPA: 3.77`)
+            ]
         }
     ]
 }
+
+const workExperience: ListWithPeriodModel = {
+    header: "Work Experience",
+    contentsList: [
+        {
+            period: "2015-2018",
+            title: "Junior Digital Marketer",
+            subtitle: "Neogames (Seoul, Korea)",
+            textList: [
+                React.createElement('span', null, `Planned and executed digital marketing strategies.`)
+            ]
+        },
+        {
+            period: "2018-2019",
+            title: "Hall Manager",
+            subtitle: "Sejong (Sydney, Australia)",
+            textList: [
+                React.createElement('span', null, `Gained a change to work in a diverse environment.`)
+            ]
+        }
+    ]
+}
+
 
 const personalInfo: Section = {
     header: "About me",
@@ -85,30 +113,11 @@ const personalInfo: Section = {
     ]
 }
 
-const workExperience: Section = {
-    header: "Work Experience",
-    isListType: true,
-    contentsList: [
-        {
-            title: "Junior Digital Marketer",
-            subtitle: "Neogames (Seoul, Republic of Korea)",
-            period: "2015-2018",
-            content: "Planned and executed digital marketing strategies."
-        },
-        {
-            title: "Hall Manager",
-            subtitle: "Sejong (Sydney, Australia)",
-            period: "2018-2019",
-            content: "Gained a change to work in a diverse environment."
-        }
-    ]
-}
-
 export {
     contact,
     webSites,
     personalInfo,
-    educationHistory,
+    educationLocale,
     workExperience,
     skillsAndExpertise
 }

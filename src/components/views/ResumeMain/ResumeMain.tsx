@@ -6,6 +6,7 @@ import SimpleListLayout from "../../layouts/SimpleListLayout/SimpleListLayout";
 // import statics
 import styles from './ResumeMain.module.css';
 import * as localeEnglish from '../../locales/locale.english';
+import ListWithPeriodLayout from "../../layouts/ListWithPeriod/ListWithPeriodLayout";
 
 const getWindowWidth = (): number => {
     return window.innerWidth;
@@ -35,16 +36,10 @@ const ResumeMain = () => {
 
     const leftColumnItems: JSX.Element = (
         <Fragment>
-            <div style={{order: "1"}} className={`${styles['grid-item']}`}>
-                <div><GreetingLayout></GreetingLayout></div>
-            </div>
-            <div style={{order: "2"}} className={`${styles['grid-item']} ${styles['listSection']}`}>
-                <div className={styles['simpleList']}>
-                    <SimpleListLayout data={locale.contact}></SimpleListLayout>
-                </div>
-                <div className={styles['simpleList']}>
-                    <SimpleListLayout data={locale.webSites}></SimpleListLayout>
-                </div>
+            <div style={{order: "0"}} className={`${styles['grid-item']} ${styles['item-profileArea']}`}>
+                {/* <div className={styles['profileArea-portrait']}></div> */}
+                <div className={styles['profileArea-greeting']}><GreetingLayout></GreetingLayout></div>
+                <div className={`${styles['profileArea-box']} ${styles['profileArea-intro']}`}>{`Good day! I'm a web developer from Seoul, currently based in Toronto, Canada. I'm interested in web technologies beyond the web. I believe opened web environment can make the world better.`}</div>
             </div>
             <div style={{order: "3"}} className={`${styles['grid-item']}`}>
                 <SectionLayout data={locale.skillsAndExpertise}></SectionLayout>
@@ -54,7 +49,7 @@ const ResumeMain = () => {
 
     const rightColumnItems: JSX.Element = (
         <Fragment>
-            <div className={styles['printableAlert']} onClick={handlePrintButton}>
+            {/* <div className={styles['printableAlert']} onClick={handlePrintButton}>
                 <div className={styles['printableAlertIcon']}>print</div>
                 <div>
                     <span>This is a print-friendly webpage résumé.</span>
@@ -62,15 +57,20 @@ const ResumeMain = () => {
                     <span>Just use the print menu of your web browser or </span>
                     <span>touch/click this message.</span>
                 </div>
+            </div> */}
+            <div className={styles['grid-item']}>
+                <ListWithPeriodLayout data={locale.educationLocale}></ListWithPeriodLayout>
             </div>
-            <div style={{order: "2"}} className={`${styles['grid-item']}`}>
-                <SectionLayout data={locale.personalInfo}></SectionLayout>
+            <div className={styles['grid-item']}>
+                <ListWithPeriodLayout data={locale.workExperience}></ListWithPeriodLayout>
             </div>
-            <div className={`${styles['grid-item']}`}>
-                <SectionLayout data={locale.workExperience}></SectionLayout>
-            </div>
-            <div className={`${styles['grid-item']}`}>
-                <SectionLayout data={locale.educationHistory}></SectionLayout>
+            <div style={{order: "2"}} className={`${styles['grid-item']} ${styles['listSection']}`}>
+                <div className={styles['simpleList']}>
+                    <SimpleListLayout data={locale.contact}></SimpleListLayout>
+                </div>
+                <div className={styles['simpleList']}>
+                    <SimpleListLayout data={locale.webSites}></SimpleListLayout>
+                </div>
             </div>
         </Fragment>
     );

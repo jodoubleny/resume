@@ -1,0 +1,64 @@
+@import url('../../../static/general.css');
+@import url('../../../static/general.resume.css');
+
+.item-listWithPeriod {
+    background-color: rgb(250, 240, 230);
+    border-radius: var(--border-radius);
+    color: var(--new-black);
+    padding: 1rem;
+}
+
+.contentList {
+    margin: 4px -25px 0 -25px;
+    position: relative;
+    z-index: 99;
+    background-color: var(--new-white);
+    border-radius: var(--border-radius);
+    color: var(--new-black);
+    padding: 2rem 1.5rem;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.listWithPeriod {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.listWithPeriod::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    bottom: 0;
+    z-index: -999;
+    border-left: 2px var(--point-color) dotted;
+}
+
+.listWithPeriod > * {
+    padding-left: 40px;
+}
+
+.listWithPeriod:last-child {
+    padding-bottom: 0;
+}
+
+.listWithPeriod:last-child::after {
+    display: none;
+}
+
+.periodMarker {
+    background-color: var(--point-color);
+    color: var(--new-white);
+    border-radius: var(--border-radius);
+    display: inline-block;
+    padding: 0 15px !important;
+}
+
+.textList {
+    margin: 0;
+    padding-left: 60px;
+}

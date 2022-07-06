@@ -1,19 +1,108 @@
 @import url('../../../static/general.css');
 @import url('../../../static/general.resume.css');
 
+.item-listWithPeriod {
+    background-color: rgb(250, 240, 230);
+    border-radius: var(--border-radius);
+    color: var(--new-black);
+    padding: 1rem;
+}
+
+.item-content {
+    margin: 4px -25px 0 -25px;
+    position: relative;
+    z-index: 99;
+    background-color: var(--new-white);
+    border-radius: var(--border-radius);
+    color: var(--new-black);
+    padding: 2rem 1.5rem;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.listWithPeriod {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.listWithPeriod::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    bottom: 0;
+    z-index: -999;
+    border-left: 2px var(--point-color) dotted;
+}
+
+.listWithPeriod > * {
+    padding-left: 40px;
+}
+
+.listWithPeriod:last-child {
+    padding-bottom: 0;
+}
+
+.listWithPeriod:last-child::after {
+    display: none;
+}
+
+.item-profileArea {
+    margin: 25px 0;
+    position: relative;
+}
+
+.profileArea-portrait {
+    margin-bottom: -100px;
+}
+
+.profileArea-box {
+    border-radius: var(--border-radius);
+    color: var(--new-white);
+}
+
+.profileArea-intro {
+    padding: 1rem 1.5em;
+    background-color: var(--new-black);
+}
+
+.contentList {
+    margin: 0;
+    padding-left: 60px;
+}
+
+.periodMarker {
+    background-color: var(--point-color);
+    color: var(--new-white);
+    border-radius: var(--border-radius);
+    display: inline-block;
+    padding: 0 15px !important;
+}
+
 .container {
-    padding: 30px;
+    padding: 80px 10px;
+    background-image: url('../../../static/paper.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .columns-wrapper {
+    background-color: rgb(255, 250, 245);
+    box-shadow: 15px 15px 50px 15px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
     max-width: 930px;
     margin: 0 auto;
+    padding: 30px;
     display: flex;
     flex-direction: row;
 }
 
 .grid-item {
     order: 999;
+    margin-bottom: 30px;
 }
 
 .column {
@@ -33,6 +122,10 @@
 }
 
 @media screen and (max-width: 690px) {
+    .container {
+        padding: 10px;
+    }
+
     .left-column {
         margin-right: 0 !important;
         min-width: max(300px, 100%) !important;
@@ -98,4 +191,8 @@
     .printableAlert {
         display: none;
     }
+}
+
+.test {
+    background-color: bisque;
 }
