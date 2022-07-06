@@ -1,5 +1,5 @@
 import React from "react";
-import { ListWithPeriodModel, ListWithPeriodContentModel } from "../../../models/ListWithPeriodModel";
+import ListWithPeriodModel, { contentWithPeriod } from "../../../models/ListWithPeriodModel";
 import styles from "./ListWithPeriodLayout.module.css"
 
 interface Props {
@@ -10,8 +10,8 @@ const ListWithPeriodLayout = (props: Props) => {
     const listWithPeriodLayout: JSX.Element = (
         <div className={styles['item-listWithPeriod']}>
             <h1>{props.data.header}</h1>
-            <div className={styles['contentList']}>
-                {props.data.contentsList.map((content: ListWithPeriodContentModel, i) => (
+            <div className={styles['contentList']} style={(props.data.accentColor && ({"--accent-color": `${props.data.accentColor}`})) as React.CSSProperties}>
+                {props.data.contentsList.map((content: contentWithPeriod, i) => (
                 <div key={i} className={styles['listWithPeriod']}>
                     <div className={styles['periodMarker']}>{content.period}</div>
                     <h2>{content.title}</h2>

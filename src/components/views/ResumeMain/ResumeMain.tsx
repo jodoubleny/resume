@@ -2,11 +2,11 @@ import React, { Fragment, useCallback, useLayoutEffect, useRef, useState } from 
 // import layouts
 import GreetingLayout from "../../layouts/GreetingLayout/GreetingLayout";
 import SectionLayout from "../../layouts/SectionLayout/SectionLayout"
-import SimpleListLayout from "../../layouts/SimpleListLayout/SimpleListLayout";
 // import statics
 import styles from './ResumeMain.module.css';
 import * as localeEnglish from '../../locales/locale.english';
 import ListWithPeriodLayout from "../../layouts/ListWithPeriod/ListWithPeriodLayout";
+import ListWithIconLayout from "../../layouts/ListWithIconLayout/ListWithIconLayout";
 
 const getWindowWidth = (): number => {
     return window.innerWidth;
@@ -58,19 +58,21 @@ const ResumeMain = () => {
                     <span>touch/click this message.</span>
                 </div>
             </div> */}
+            <div style={{order: "2"}} className={styles['grid-item']}>
+                <div className={styles['listSection']}>
+                    <div>
+                        <ListWithIconLayout data={locale.contactLocale}></ListWithIconLayout>
+                    </div>
+                    <div>
+                        <ListWithIconLayout data={locale.linksLocale}></ListWithIconLayout>
+                    </div>
+                </div>
+            </div>
             <div className={styles['grid-item']}>
                 <ListWithPeriodLayout data={locale.educationLocale}></ListWithPeriodLayout>
             </div>
             <div className={styles['grid-item']}>
                 <ListWithPeriodLayout data={locale.workExperience}></ListWithPeriodLayout>
-            </div>
-            <div style={{order: "2"}} className={`${styles['grid-item']} ${styles['listSection']}`}>
-                <div className={styles['simpleList']}>
-                    <SimpleListLayout data={locale.contact}></SimpleListLayout>
-                </div>
-                <div className={styles['simpleList']}>
-                    <SimpleListLayout data={locale.webSites}></SimpleListLayout>
-                </div>
             </div>
         </Fragment>
     );

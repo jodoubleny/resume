@@ -1,39 +1,40 @@
 import React from "react";
-import { ListWithPeriodModel } from "../../models/ListWithPeriodModel";
+import ListWithIconModel from "../../models/ListWithIconModel";
+import ListWithPeriodModel from "../../models/ListWithPeriodModel";
 import { Section } from "../../models/Section";
 import { SimpleList } from "../../models/SimpleList";
 
-const contact: SimpleList = {
+const contactLocale: ListWithIconModel = {
     header: "Contact",
     contentsList: [
         {
             marker: "call",
-            content: "(+1) 416-951-3856",
+            text: "(+1) 416-951-3856",
             link: "call:+14169513856"
         },
         {
             marker: "mail",
-            content: "jodoubleny@yahoo.com",
+            text: "jodoubleny@yahoo.com",
             link: "mailto:jodoubleny@yahoo.com"
         },
         {
             marker: "home",
-            content: "East York, ON"
+            text: "Toronto, ON"
         }
     ]
 }
 
-const webSites: SimpleList = {
+const linksLocale: ListWithIconModel = {
     header: "Links",
     contentsList: [
         {
             marker: "code",
-            content: "github.com/jodoubleny",
+            text: "github.com/jodoubleny",
             link: `https://www.github.com/jodoubleny`
         },
         {
             marker: "description",
-            content: "linkedin.com/in/jonnypark/",
+            text: "linkedin.com/in/jonnypark/",
             link: `https://www.linkedin.com/in/jonnypark/`
         }
     ]
@@ -60,6 +61,7 @@ const skillsAndExpertise: Section = {
 
 const educationLocale: ListWithPeriodModel = {
     header: "Education",
+    accentColor: "103, 95, 229",
     contentsList: [
         {
             period: "2020-2022",
@@ -82,6 +84,7 @@ const educationLocale: ListWithPeriodModel = {
 
 const workExperience: ListWithPeriodModel = {
     header: "Work Experience",
+    accentColor: "224, 69, 34",
     contentsList: [
         {
             period: "2015-2018",
@@ -114,8 +117,8 @@ const personalInfo: Section = {
 }
 
 export {
-    contact,
-    webSites,
+    contactLocale,
+    linksLocale,
     personalInfo,
     educationLocale,
     workExperience,

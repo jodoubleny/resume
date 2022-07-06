@@ -1,20 +1,23 @@
-class ListWithPeriodModel {
-    constructor(
-        public header: string,
-        public contentsList: Array<ListWithPeriodContentModel>
-    ){ }
+import ListModel from "./ListModel";
+
+type contentWithPeriod = {
+    period: string,
+    title: string,
+    subtitle: string,
+    textList: Array<JSX.Element>
 }
 
-class ListWithPeriodContentModel {
+class ListWithPeriodModel extends ListModel {
     constructor(
-        public period: string,
-        public title: string,
-        public subtitle: string,
-        public textList: Array<JSX.Element>
-    ){ }
+        header: string,
+        public contentsList: Array<contentWithPeriod>,
+        public accentColor?: string
+    ){
+        super(header);
+    }
 }
 
+export default ListWithPeriodModel;
 export {
-    ListWithPeriodModel,
-    ListWithPeriodContentModel
+    type contentWithPeriod
 }
