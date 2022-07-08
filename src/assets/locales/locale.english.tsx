@@ -65,7 +65,7 @@ const skillsLocale: SimpleListWithIconModel = {
 }
 
 const languageLocale: SimpleListWithIconModel = {
-    header: "Skills",
+    header: "Languages",
     contentsList: [
         {
             title: "English",
