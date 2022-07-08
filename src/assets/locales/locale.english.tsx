@@ -1,16 +1,19 @@
 import React from "react";
-import ListWithIconModel from "../../models/ListWithIconModel";
+import ButtonListWithIconModel from "../../models/ButtonListWithIconModel";
 import ListWithPeriodModel from "../../models/ListWithPeriodModel";
-import { Section } from "../../models/Section";
-import { SimpleList } from "../../models/SimpleList";
+import SimpleListWithIconModel from "../../models/SimpleListWithIconModel";
+// import assets
+import reactSvg from '../images/react.svg';
+import dotnetSvg from '../images/dotnet.svg';
+import electronSvg from '../images/electron.svg';
 
-const contactLocale: ListWithIconModel = {
+const contactLocale: ButtonListWithIconModel = {
     header: "Contact",
     contentsList: [
         {
             marker: "call",
             text: "(+1) 416-951-3856",
-            link: "call:+14169513856"
+            link: "tel:+14169513856"
         },
         {
             marker: "mail",
@@ -24,7 +27,7 @@ const contactLocale: ListWithIconModel = {
     ]
 }
 
-const linksLocale: ListWithIconModel = {
+const linksLocale: ButtonListWithIconModel = {
     header: "Links",
     contentsList: [
         {
@@ -34,27 +37,43 @@ const linksLocale: ListWithIconModel = {
         },
         {
             marker: "description",
-            text: "linkedin.com/in/jonnypark/",
+            text: "linkedin.com/in/jonnypark",
             link: `https://www.linkedin.com/in/jonnypark/`
         }
     ]
 }
 
-const skillsAndExpertise: Section = {
+const skillsLocale: SimpleListWithIconModel = {
     header: "Skills",
-    isListType: true,
     contentsList: [
         {
-            content: "ASP.net Backend with C#"
+            title: "C#",
+            subtitle: "ASP.NET Backend",
+            imgSrc: `${dotnetSvg}`
         },
         {
-            content: "Micro services based on Spring Boot"
+            title: "React.js",
+            subtitle: "with TypeScript",
+            imgSrc: `${reactSvg}`
         },
         {
-            content: "MERN stack with Typescript"
+            title: "Electron.js",
+            subtitle: "with Javascript",
+            imgSrc: `${electronSvg}`
+        }
+    ]
+}
+
+const languageLocale: SimpleListWithIconModel = {
+    header: "Skills",
+    contentsList: [
+        {
+            title: "English",
+            marker: "language"
         },
         {
-            content: "Electron.js with Typescript"
+            title: "Korean",
+            marker: "language"
         }
     ]
 }
@@ -105,22 +124,11 @@ const workExperience: ListWithPeriodModel = {
     ]
 }
 
-
-const personalInfo: Section = {
-    header: "About me",
-    isListType: false,
-    contentsList: [
-        {
-            content: "Good day! I'm a web developer from Seoul, currently based in Toronto, Canada. I'm interested in web technologies beyond the web. I believe opened web environment can make the world better."
-        }
-    ]
-}
-
 export {
     contactLocale,
     linksLocale,
-    personalInfo,
     educationLocale,
     workExperience,
-    skillsAndExpertise
+    skillsLocale,
+    languageLocale
 }

@@ -4,11 +4,11 @@
     font-stretch: 75% 125%;
     font-weight: 100 800;
     src:
-        url('./AnekLatin.woff2')
+        url('../fonts/AnekLatin.woff2')
         format('woff2 supports variations'),
-        url('./AnekLatin.woff2')
+        url('../fonts/AnekLatin.woff2')
         format('woff2-variations'),
-        url('./AnekLatin.woff2')
+        url('../fonts/AnekLatin.woff2')
         format('woff2');
 }
 
@@ -17,11 +17,11 @@
     font-style: normal;
     font-weight: 100 700;
     src:
-        url('./MaterialSymbolsOutlined.woff2')
+        url('../fonts/MaterialSymbolsOutlined.woff2')
         format('woff2 supports variations'),
-        url('./MaterialSymbolsOutlined.woff2')
+        url('../fonts/MaterialSymbolsOutlined.woff2')
         format('woff2-variations'),
-        url('./MaterialSymbolsOutlined.woff2')
+        url('../fonts/MaterialSymbolsOutlined.woff2')
         format('woff2');
 }
 
