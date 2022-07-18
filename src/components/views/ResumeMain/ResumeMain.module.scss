@@ -1,0 +1,109 @@
+@use '../../../assets/styles/shared';
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 80px 0;
+    background-color: rgb(243, 242, 233);
+}
+
+.columnsWrapper {
+    background-color: shared.$main-white;
+    box-shadow: 15px 15px 40px 10px rgba(0, 0, 0, 0.3);
+    border-radius: shared.$border-radius;
+    max-width: calc(shared.$gap-between-items + 900px);
+    margin: 0 auto;
+    padding: shared.$gap-between-items;
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+}
+
+.column {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    & > *:first-child h1 {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.leftColumn {
+    max-width: 300px;
+    margin-right: shared.$gap-between-items;
+}
+
+.rightColumn {
+    max-width: 600px;
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 690px) {
+    .leftColumn {
+        margin-right: 0;
+        max-width: max(300px, 100%);
+        flex-grow: 1;
+    }
+
+    .rightColumn {
+        display: none;
+    }
+}
+
+.profileArea {
+    margin-top: 25px;
+    position: relative;
+
+    & > .portrait {
+        margin-top: -100px;
+        margin-bottom: 1rem;
+    }
+
+    & > .greeting {
+        margin: 1rem 0;
+    }
+
+    & > .comment {
+        color: shared.$main-black;
+    }
+}
+
+.gridItem {
+    order: 99;
+    margin-bottom: 30px;
+
+    & h1 {
+        margin: 20px 0;
+        flex-grow: 1;
+    }
+}
+
+.listSection {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: shared.$gap-between-items;
+    margin-bottom: 0;
+}
+
+$area-order:
+    'profileArea',
+    'contactLinkArea',
+    'skillsArea',
+    'languageArea',
+    'educationArea',
+    ;
+
+@each $area in $area-order {
+    .#{$area} {
+        order: index($area-order, $area);
+    }
+}

@@ -1,0 +1,77 @@
+@use '../../../assets/styles/shared';
+
+.listWithPeriodWrapper {
+    background-color: shared.$sub-white;
+    border-radius: shared.$border-radius;
+    color: shared.$main-black;
+    padding: 0.3rem 1rem 1.2rem 1rem;
+
+    & > .contentList {
+        margin: 0 -30px 0 -30px;
+        position: relative;
+        z-index: 99;
+        background-color: rgb(var(--accent-color));
+        border-radius: shared.$border-radius;
+        color: shared.$main-black;
+        padding: 2rem 1.5rem;
+        box-shadow: 5px 5px 20px 5px rgba(var(--accent-color), 0.5);
+    }
+}
+
+.listWithPeriod {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    padding-bottom: 1rem;
+    color: shared.$main-white;
+
+    & > * {
+        margin-bottom: 0.5rem;
+    }
+
+    & > *:nth-child(2) {
+        margin-bottom: 0;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        bottom: 0;
+        z-index: -999;
+        border-left: 2px shared.$main-white dotted;
+    }
+
+    & > * {
+        padding-left: 40px;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    & > .periodMarker {
+        background-color: shared.$main-white;
+        color: shared.$main-black;
+        border-radius: shared.$border-radius;
+        display: inline-block;
+        padding: 0 15px !important;
+    }
+
+    & > .textList {
+        margin: 0;
+        padding-left: 60px;
+    }
+}
+

@@ -1,0 +1,28 @@
+@use '../../../assets/styles/shared';
+
+.portraitFrame {
+    width: 300px;
+    height: 370px;
+    position: relative;
+    border-radius: 0% 0% 200px 100px / 200px 170px 130px 100px ;
+    overflow: hidden;
+
+    & > .picture {
+        display: block;
+        width: 300px;
+        height: 450px;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    & > .background {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
+        background-color: shared.$main-black;
+        border-radius: 95px 210px 200px 100px / 200px 170px 130px 100px ;
+    }
+}

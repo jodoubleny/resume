@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:95c854a007f4b40a64ee880046e920dca62a22218e9943dfa7fe5230e278b181a415c7f9d6b13fbbe711a4b6704358455978456744d1619097cc0d13e2475eb3#npm:18.2.0"],\
             ["react-scripts", "virtual:95c854a007f4b40a64ee880046e920dca62a22218e9943dfa7fe5230e278b181a415c7f9d6b13fbbe711a4b6704358455978456744d1619097cc0d13e2475eb3#npm:5.0.1"],\
+            ["sass", "npm:1.53.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
@@ -9742,6 +9743,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["immutable", [\
+        ["npm:4.1.0", {\
+          "packageLocation": "./.yarn/cache/immutable-npm-4.1.0-f6635927b8-b9bc1f14fb.zip/node_modules/immutable/",\
+          "packageDependencies": [\
+            ["immutable", "npm:4.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["import-fresh", [\
         ["npm:3.3.0", {\
           "packageLocation": "./.yarn/cache/import-fresh-npm-3.3.0-3e34265ca9-2cacfad06e.zip/node_modules/import-fresh/",\
@@ -14874,6 +14884,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:95c854a007f4b40a64ee880046e920dca62a22218e9943dfa7fe5230e278b181a415c7f9d6b13fbbe711a4b6704358455978456744d1619097cc0d13e2475eb3#npm:18.2.0"],\
             ["react-scripts", "virtual:95c854a007f4b40a64ee880046e920dca62a22218e9943dfa7fe5230e278b181a415c7f9d6b13fbbe711a4b6704358455978456744d1619097cc0d13e2475eb3#npm:5.0.1"],\
+            ["sass", "npm:1.53.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
@@ -14991,6 +15002,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/sanitize.css-npm-13.0.0-3424903b5d-a99ca77c4d.zip/node_modules/sanitize.css/",\
           "packageDependencies": [\
             ["sanitize.css", "npm:13.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["sass", [\
+        ["npm:1.53.0", {\
+          "packageLocation": "./.yarn/cache/sass-npm-1.53.0-84886439f0-4bcb0617d6.zip/node_modules/sass/",\
+          "packageDependencies": [\
+            ["sass", "npm:1.53.0"],\
+            ["chokidar", "npm:3.5.3"],\
+            ["immutable", "npm:4.1.0"],\
+            ["source-map-js", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\

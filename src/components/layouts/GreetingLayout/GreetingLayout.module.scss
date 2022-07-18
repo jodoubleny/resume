@@ -1,0 +1,9 @@
+@use '../../../assets/styles/shared';
+
+.wrapper {
+    font: {
+        size: 2.8rem;
+        variation-settings: 'wght' 800, 'wdth' 115; 
+    }
+    line-height: 2.8rem;
+}

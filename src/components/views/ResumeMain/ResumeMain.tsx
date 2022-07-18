@@ -6,7 +6,7 @@ import ButtonListWithIconLayout from "../../layouts/ButtonListWithIconLayout/But
 import PortraitLayout from "../../layouts/PortraitLayout/PortraitLayout";
 import SimpleListWithIconLayout from "../../layouts/SimpleListWithIconLayout/SimpleListWithIconLayout";
 // import assets
-import styles from './ResumeMain.module.css';
+import styles from './ResumeMain.module.scss';
 import * as localeEnglish from '../../../assets/locales/locale.english';
 import portraitPicture from '../../../assets/images/portrait.webp';
 
@@ -55,17 +55,17 @@ const ResumeMain = () => {
 
     const leftColumnItems: JSX.Element = (
         <Fragment>
-            <div className={`${styles['grid-item']} ${styles['item-profileArea']}`} style={{order: "0"}}>
-                <div className={styles['profileArea-portrait']}>
+            <div className={`${styles.gridItem} ${styles.profileArea}`}>
+                <div className={styles.portrait}>
                     <PortraitLayout imgSrc={portraitPicture} scrollTop={scrollTop}></PortraitLayout>
                 </div>
-                <div className={styles['profileArea-greeting']}><GreetingLayout></GreetingLayout></div>
-                <div className={`${styles['profileArea-comment']}`}>{`Good day! I'm a web developer from Seoul, currently based in Toronto, Canada. I'm interested in web technologies beyond the web. I believe opened web environment can make the world better.`}</div>
+                <div className={styles.greeting}><GreetingLayout></GreetingLayout></div>
+                <div className={styles.comment}>{`Good day! I'm a web developer from Seoul, currently based in Toronto, Canada. I'm interested in web technologies beyond the web. I believe opened web environment can make the world better.`}</div>
             </div>
-            <div className={`${styles['grid-item']}`} style={{order: "3"}} >
+            <div className={`${styles.gridItem} ${styles.skillsArea}`}>
                 <SimpleListWithIconLayout data={locale.skillsLocale}></SimpleListWithIconLayout>
             </div>
-            <div className={`${styles['grid-item']}`} style={{order: "5"}} >
+            <div className={`${styles.gridItem} ${styles.languageArea}`}>
                 <SimpleListWithIconLayout data={locale.languageLocale}></SimpleListWithIconLayout>
             </div>
         </Fragment>
@@ -73,8 +73,8 @@ const ResumeMain = () => {
 
     const rightColumnItems: JSX.Element = (
         <Fragment>
-            <div className={styles['grid-item']} style={{order: "2"}} >
-                <div className={styles['listSection']}>
+            <div className={`${styles.gridItem} ${styles.contactLinkArea}`}>
+                <div className={styles.listSection}>
                     <div>
                         <ButtonListWithIconLayout data={locale.contactLocale}></ButtonListWithIconLayout>
                     </div>
@@ -83,24 +83,24 @@ const ResumeMain = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles['grid-item']}>
+            <div className={`${styles.gridItem} ${styles.educationArea}`}>
                 <ListWithPeriodLayout data={locale.educationLocale}></ListWithPeriodLayout>
             </div>
-            <div className={styles['grid-item']}>
+            <div className={`${styles.gridItem} ${styles.workExperienceArea}`}>
                 <ListWithPeriodLayout data={locale.workExperience}></ListWithPeriodLayout>
             </div>
         </Fragment>
     );
 
     const resumeMainPage: JSX.Element = (
-        <div className={`${styles['container']}`}>
-            <div className={`${styles['columns-wrapper']}`}>
-                <div className={`${styles['column']} ${styles['left-column']}`}>
+        <div className={styles.container}>
+            <div className={styles.columnsWrapper}>
+                <div className={`${styles.column} ${styles.leftColumn}`}>
                     {leftColumnItems}
                     {viewportWidth < mobileLayoutStartWidth && rightColumnItems}
                 </div>
                 {viewportWidth >= mobileLayoutStartWidth && (
-                <div className={`${styles['column']} ${styles['right-column']}`}>
+                <div className={`${styles.column} ${styles.rightColumn}`}>
                     {rightColumnItems}
                 </div>
                 )}
